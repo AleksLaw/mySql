@@ -1,5 +1,7 @@
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="person")
@@ -15,6 +17,9 @@ public class Person {
     @Column(name = "age")
     private int age;
 
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Car> cars;
+
     public Person() {
     }
 
@@ -23,8 +28,26 @@ public class Person {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
+        cars = new ArrayList<>();
+
+    }
+
+    public void addCar(Car car) {
+        car.setPerson(this);
+        cars.add(car);
+    }
+
+    public void removeAuto(Car car) {
+        cars.remove(car);
+    }
 
 
+    public List<Car> getCar() {
+        return cars;
+    }
+
+    public void setAutos(List<Car> cars) {
+        this.cars = cars;
     }
 
     public int getId() {

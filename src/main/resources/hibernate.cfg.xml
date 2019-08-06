@@ -14,6 +14,7 @@
         <property name="show sql">true</property>
 
         <mapping class="Person"/>
+        <mapping class="Car"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,5 +1,4 @@
 import org.hibernate.HibernateException;
-import org.hibernate.Transaction;
 
 public class PersonDAO extends DAO {
 
