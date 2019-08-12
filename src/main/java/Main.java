@@ -1,5 +1,4 @@
 
-
 public class Main {
     public static void main(String[] args) throws Exception {
         Car car1 = new Car(1, "BMW", "Green");
@@ -17,20 +16,20 @@ public class Main {
         person2.addCar(car3);
         PersonDAO personDAO = new PersonDAO();
 
-//        personDAO.addPerson(person1);
-//        personDAO.addPerson(person2);
-//        personDAO.addPerson(person3);
-//
-       // personDAO.deletePerson(person1);
-//
+        personDAO.addPerson(person1);
+        personDAO.addPerson(person2);
+        personDAO.addPerson(person3);
+
+        personDAO.deletePerson(person1);
+
         Person getperson = personDAO.getPerson(2);
 
         getperson.getCar().forEach(car -> System.out.println(car.getModel()+" "+car.getColor()));
         System.out.println(getperson.getName() + " " + getperson.getLastname() + " " + getperson.getAge());
 //
 //
-//        person2.setName("Yiu");
-//        personDAO.updatePerson(person2);
+        person2.setName("Yiu");
+        personDAO.updatePerson(person2);
 
     }
 }

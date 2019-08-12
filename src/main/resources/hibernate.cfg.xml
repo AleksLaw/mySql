@@ -4,14 +4,15 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">jdbc:mysql://localhost/hibernatebd?useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.password">Kjuby789789987</property>
         <property name="show sql">true</property>
+        <property name="hibernate.hbm2ddl.auto" >update</property>
 
         <mapping class="Person"/>
         <mapping class="Car"/>
