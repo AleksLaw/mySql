@@ -1,13 +1,13 @@
 import javax.persistence.*;
 
 @Entity
-@Table(name="cars")
+@Table(name = "cars")
 public class Car {
     @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    @Column (name = "model")
+    @Column(name = "model")
     private String model;
     @Column(name = "color")
     private String color;
@@ -19,16 +19,13 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id,String model, String color) {
-        this.id = id;
-        this.model = model;
-        this.color = color;
-    }
-
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getModel() {
         return model;

@@ -36,6 +36,7 @@ public class PersonDAO extends DAO {
 
      getSession().update(person);
         commit();
+
     } catch (HibernateException e) {
         rollback();
         throw new Exception("Could not update person " + person.getName(), e);
@@ -49,6 +50,7 @@ public class PersonDAO extends DAO {
             begin();
             getSession().delete(person);
             commit();
+
         } catch (HibernateException e) {
             rollback();
             throw new Exception("Could not delete person " + person.getName(), e);

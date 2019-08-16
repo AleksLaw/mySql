@@ -1,4 +1,7 @@
 
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +11,8 @@ import java.util.List;
 public class Person {
     @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @GenericGenerator(name = "id",strategy = "increment")
     @Column (name="id")
     private int id;
     @Column (name = "name")
@@ -18,23 +23,16 @@ public class Person {
     private int age;
 
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Car> cars;
+    private List<Car> cars= new ArrayList<>();
 
     public Person() {
     }
 
-    public Person(int id,String name, String lastname, int age) {
-        this.id = id;
-        this.name = name;
-        this.lastname = lastname;
-        this.age = age;
-        cars = new ArrayList<>();
-
-    }
 
     public void addCar(Car car) {
-        car.setPerson(this);
         cars.add(car);
+        car.setPerson(this);
+
     }
 
     public void removeAuto(Car car) {

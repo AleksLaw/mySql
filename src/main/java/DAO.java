@@ -30,9 +30,7 @@ public class DAO {
     protected void rollback() {
             getSession().getTransaction().rollback();
     }
-//    protected void merge() {
-//            getSession().merge();
-//    }
+
 
 
 
