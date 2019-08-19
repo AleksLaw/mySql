@@ -1,9 +1,14 @@
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "cars")
 public class Car {
+
     @Id
+    @GeneratedValue
+    @GenericGenerator(name = "id",strategy = "increment")
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;

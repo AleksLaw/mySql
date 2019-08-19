@@ -54,8 +54,8 @@ public class Main {
 
         Person getperson = personDAO.getPerson(0);
 
-        getperson.getCar().forEach(car -> System.out.println(car.getModel() + " " + car.getColor()));
-        System.out.println(getperson.getName() + " " + getperson.getLastname() + " " + getperson.getAge());
+     //   getperson.getCar().forEach(car -> System.out.println(car.getModel() + " " + car.getColor()));
+//        System.out.println(getperson.getName() + " " + getperson.getLastname() + " " + getperson.getAge());
 
         person2.setName("Yiu");
         personDAO.updatePerson(person2);
